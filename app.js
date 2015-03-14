@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require("mongoose");
 
 // Connection to DB
-mongoose.connect('mongodb://localhost/tvshows', function (err, res) {
+mongoose.connect('mongodb://localhost/videogames', function (err, res) {
     if (err) throw err;
     console.log('Connected to Database');
 });
