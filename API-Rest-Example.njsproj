@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="db\controllers\videoGamesController.js" />
     <Compile Include="db\models\VideoGamesModel.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
@@ -45,6 +46,7 @@
     <Folder Include="bin\" />
     <Folder Include="db\" />
     <Folder Include="db\models\" />
+    <Folder Include="db\controllers\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />

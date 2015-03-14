@@ -5,6 +5,7 @@ var videoGamesSchema = new Schema({
     title: { type: String },
     year: { type: Number },
     country: { type: String },
+    poster: {type: String},
     plataform: { type: String },
     genre: {
         type: String, enum: 
