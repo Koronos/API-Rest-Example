@@ -37,16 +37,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="db\controllers\videoGamesController.js" />
-    <Compile Include="db\models\VideoGamesModel.js" />
+    <Compile Include="video_games_api\controllers\videoGamesController.js" />
+    <Compile Include="video_games_api\models\VideoGamesModel.js" />
+    <Compile Include="video_games_api\appVideoGames.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="db\" />
-    <Folder Include="db\models\" />
-    <Folder Include="db\controllers\" />
+    <Folder Include="video_games_api\" />
+    <Folder Include="video_games_api\models\" />
+    <Folder Include="video_games_api\controllers\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />

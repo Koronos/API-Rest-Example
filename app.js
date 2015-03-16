@@ -6,11 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require("mongoose");
 
-// Connection to DB
-mongoose.connect('mongodb://localhost/videogames', function (err, res) {
-    if (err) throw err;
-    console.log('Connected to Database');
-});
+//Routes
+var videoGamesAPI = require("./video_games_api/appVideoGames.js");
 
 var app = express();
 
@@ -25,6 +22,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//adding routes
+app.use("/VideoGames", videoGamesAPI.videoGamesRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

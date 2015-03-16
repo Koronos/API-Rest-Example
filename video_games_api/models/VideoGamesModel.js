@@ -4,12 +4,10 @@ var Schema = mongoose.Schema;
 var videoGamesSchema = new Schema({
     title: { type: String },
     year: { type: Number },
-    country: { type: String },
-    poster: {type: String},
     plataform: { type: String },
     genre: {
         type: String, enum: 
- ["FPS", "Adventures", "RPG", "MOBA", "MORPG", "Sports", "Rancing"]
+ ["FPS", "Adventures", "RPG", "MOBA", "MORPG", "Sports", "Rancing","Estrategy"]
     },
     summary: {type: String}
 });
