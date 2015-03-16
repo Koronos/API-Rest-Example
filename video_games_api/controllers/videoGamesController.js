@@ -43,16 +43,20 @@ exports.addVideoGame = function (req, res) {
 
 //PUT - Update a register already exists
 exports.updateVideoGame = function (req, res) {
-    var videoGame = new VideoGame({
-        title: req.body.title,
-        year: req.body.year,
-        genre: req.body.genre,
-        summary: req.body.summary
-    });
-
-    VideoGame.findByIdAndUpdate(req.params.id, videoGame, function (err) {
+    VideoGame.findById(req.params.id, function (err, videoGame) {
         if (err)
             return res.status(500).body(err.message);
+        videoGame.title = req.body.title;
+        videoGame.year = req.body.year;
+        videoGame.genre = req.body.genre;
+        videoGame.summary = req.body.summary;
+        videoGame.save(function (err) {
+            if (err)
+                return res.status(500).jsonp(err.message);
+        });
+
+        console.log('PUT /videogame/' + req.params.id);
+        res.status(200).jsonp(videoGame);
     });
 
 };
