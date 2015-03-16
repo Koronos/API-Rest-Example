@@ -6,7 +6,6 @@ exports.findAllVideoGames = function (req, res) {
     VideoGame.find(function (err, videogames) {
         if(err)
             return res.status(500).body(err.message);    
-        console.log('GET /VideoGames')
         res.status(200).jsonp(videogames);
     });
 };
@@ -16,8 +15,6 @@ exports.findById = function (req, res) {
     VideoGame.findById(req.params.id, function (err, videogame) {
         if (err)
             return res.status(500).body(err.message);
-        
-        console.log('GET /videogame/' + req.params.id);
         res.status(200).jsonp(videogame);
     });
 };
@@ -54,8 +51,6 @@ exports.updateVideoGame = function (req, res) {
             if (err)
                 return res.status(500).jsonp(err.message);
         });
-
-        console.log('PUT /videogame/' + req.params.id);
         res.status(200).jsonp(videoGame);
     });
 
