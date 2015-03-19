@@ -49,7 +49,7 @@ exports.updateVideoGame = function (req, res) {
         videoGame.summary = req.body.summary;
         videoGame.save(function (err) {
             if (err)
-                return res.status(500).jsonp(err.message);
+                return res.status(500).body(err.message);
         });
         res.status(200).jsonp(videoGame);
     });
